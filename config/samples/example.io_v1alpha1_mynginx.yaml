@@ -1,0 +1,12 @@
+apiVersion: example.io.example.io/v1alpha1
+kind: MyNginx
+metadata:
+  name: mynginx-sample
+spec:
+  size: 1
+  image: nginx:1.14.2
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 30001
+

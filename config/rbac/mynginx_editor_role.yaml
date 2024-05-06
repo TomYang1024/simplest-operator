@@ -1,0 +1,31 @@
+# permissions for end users to edit mynginxes.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: mynginx-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: simplest-operator
+    app.kubernetes.io/part-of: simplest-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: mynginx-editor-role
+rules:
+- apiGroups:
+  - example.io.example.io
+  resources:
+  - mynginxes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - example.io.example.io
+  resources:
+  - mynginxes/status
+  verbs:
+  - get
