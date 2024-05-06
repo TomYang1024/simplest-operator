@@ -115,5 +115,5 @@ func (r *resources) CreateOrUpdateFormService(ctx context.Context, as *v1alpha1.
 }
 
 func (r *resources) GetResource(ctx context.Context, namespace types.NamespacedName, as *v1alpha1.MyNginx) (err error) {
-	return r.Client.Get(ctx, namespace, as)
+	return r.Get(ctx, namespace, as)
 }
